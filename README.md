@@ -6,6 +6,10 @@ Thank you for participating in the Positive+1 technology test for Flutter develo
 ## Objective
 Your task is to replicate the functionality and UI of a provided design mockup for a social network support group application targeted at individuals with HIV. Your challenge is to build an API that your Flutter app will consume to present a list of posts.
 
+## Designs!
+
+https://www.figma.com/file/9llniSGNYo7wzn7al3X3lR/Tech-Test?type=design&node-id=0%3A1&mode=design&t=iz2iQF16mn1jDf1C-1
+
 ## Test Instructions
 
 ### Step 1: API Development
