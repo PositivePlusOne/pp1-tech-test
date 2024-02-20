@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.app_config import settings
 from app.database.database import engine, Base
+from app.routes.post_routes import post_router
 
 import app.models
 
@@ -17,6 +18,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(post_router, prefix=settings.API_V1_STR)
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
