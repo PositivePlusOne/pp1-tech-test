@@ -4,6 +4,10 @@ from sqlalchemy.orm import sessionmaker
 import logging
 from app.core.app_config import settings
 
+# Set the logging level to display the queries
+logging.basicConfig()
+logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+
 SQLALCHEMY_DATABASE_URL = settings.SQLALCHEMY_DATABASE_URI
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)

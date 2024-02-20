@@ -1,7 +1,7 @@
 from pydantic import BaseModel, validator
 from typing import Union, List
 from datetime import date, datetime
-from app.schemas.tags_schema import TagsCreate
+from app.schemas.tags_schema import TagsCreate, TagSchema
 from app.schemas.comments_schema import CommentSchema
 
 class PostCreate(BaseModel):
@@ -16,6 +16,14 @@ class PostUpdate(PostCreate):
 class PostSchema(PostCreate):
     id: int
     comments: Union[None, List[CommentSchema]]
+    tags: List[TagSchema]
+    like_count: int
+    time_created: datetime
+    time_updated: datetime
     
     class Config:
         orm_mode = True
+        
+class PostList(BaseModel):
+    posts: List[PostSchema]
+    count: int
