@@ -1,0 +1,91 @@
+name: positiveplus
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  stacked: ^3.4.0
+  stacked_services: ^1.1.0
+  flutter_svg: ^2.0.9
+  smooth_page_indicator: ^1.1.0
+  floating_bottom_navigation_bar: ^1.5.2
+  simple_tags: ^0.0.6
+  http: ^1.2.0
+  get_time_ago: ^1.3.1
+  cached_network_image: ^3.3.1
+  flutter_dotenv: ^5.1.0
+
+dev_dependencies:
+  build_runner: ^2.4.5
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  mockito: ^5.4.1
+  stacked_generator: ^1.3.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/svg/
+    - .env
+
+  fonts:
+    - family: BN
+      fonts:
+        - asset: assets/fonts/BN/BNSuper-Sized.otf
+
+    - family: AlbertSans
+      fonts:
+        - asset: assets/fonts/AlbertSans/AlbertSans-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/AlbertSans/AlbertSans-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/AlbertSans/AlbertSans-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-Light.ttf
+          weight: 300
+        - asset: assets/fonts/AlbertSans/AlbertSans-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/AlbertSans/AlbertSans-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/AlbertSans/AlbertSans-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/AlbertSans/AlbertSans-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/AlbertSans/AlbertSans-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/AlbertSans/AlbertSans-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/AlbertSans/AlbertSans-Black.ttf
+          weight: 900
+        - asset: assets/fonts/AlbertSans/AlbertSans-BlackItalic.ttf
+          weight: 900
+          style: italic
+
