@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  customer:
+    container_name: positiveplusone
+    build: 
+      context: ./positiveplusone
+      dockerfile: Dockerfile
+    ports:
+      - 6061:6061
+    volumes:
+      - ./positiveplusone:/app
+    depends_on:
+      - ppdb
+    links:
+      - ppdb
+
+  ppdb:
+    container_name: ppdb
+    build:
+      context: ./db
+      dockerfile: Dockerfile
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
