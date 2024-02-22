@@ -8,18 +8,28 @@ PreferredSizeWidget getAppBar(Color appBarColor) {
       fit: BoxFit.cover,
     ),
     actions: [
-      Container(
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          border: Border.all(color: appBarIconBorderGray, width: 1.0),
-        ),
-        child: const Padding(
-            padding: EdgeInsets.all(8),
-            child: Badge(
-              smallSize: 10,
-              backgroundColor: Colors.black,
+      Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(color: appBarIconBorderGray, width: 1.0),
+            ),
+            child: const Padding(
+              padding: EdgeInsets.all(8),
               child: Icon(Icons.notifications_outlined),
-            )),
+            ),
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Badge(
+              smallSize: 12,
+              backgroundColor: Colors.black,
+              child: Container(), // Empty container as the badge content
+            ),
+          ),
+        ],
       ),
       const SizedBox(
         width: 5,

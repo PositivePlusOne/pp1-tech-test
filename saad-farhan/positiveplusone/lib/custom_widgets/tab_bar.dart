@@ -20,7 +20,7 @@ Widget getTabBar(int selectedTab, Function(int) setActiveTab) {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
                   padding: const EdgeInsets.only(
-                      left: 25, right: 25, top: 10, bottom: 10),
+                      left: 40, right: 40, top: 10, bottom: 10),
                   child: Text(
                     "Popular",
                     style: GoogleFonts.albertSans(
@@ -42,7 +42,7 @@ Widget getTabBar(int selectedTab, Function(int) setActiveTab) {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
                   padding: const EdgeInsets.only(
-                      left: 25, right: 25, top: 10, bottom: 10),
+                      left: 40, right: 40, top: 10, bottom: 10),
                   child: Text(
                     "Clips",
                     style: GoogleFonts.albertSans(
@@ -63,7 +63,7 @@ Widget getTabBar(int selectedTab, Function(int) setActiveTab) {
                       borderRadius:
                           const BorderRadius.all(Radius.circular(25))),
                   padding: const EdgeInsets.only(
-                      left: 25, right: 25, top: 10, bottom: 10),
+                      left: 40, right: 40, top: 10, bottom: 10),
                   child: Text(
                     "Following",
                     style: GoogleFonts.albertSans(
