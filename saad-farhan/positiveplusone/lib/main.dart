@@ -159,7 +159,7 @@ class _MyHomePageState extends State<MyHomePage>
                           tags: post.tags
                               .map((tag) => '#${tag.content}')
                               .join(' '),
-                          likeCount: post.likeCount.toString(),
+                          likeCount: post.likes.length.toString(),
                           commentCount: post.comments.length.toString(),
                           postUrl: post.imageUri,
                         );

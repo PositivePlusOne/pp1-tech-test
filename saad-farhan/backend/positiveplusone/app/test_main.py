@@ -94,3 +94,14 @@ def test_create_comments():
         data["post_id"] = random.randint(1, 11)
         response = client.post("/api/v1/post/comment", json =data)
         assert response.status_code == 200
+        
+def test_create_likes():
+    data = {
+        "user_id" : 2,
+        "post_id" : 1
+    }
+    # Create test likes
+    for _ in range(0, 50):
+        data["post_id"] = random.randint(1, 11)
+        response = client.post("/api/v1/post/like", json =data)
+        assert response.status_code == 200

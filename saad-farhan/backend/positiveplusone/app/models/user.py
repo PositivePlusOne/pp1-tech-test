@@ -15,6 +15,8 @@ class User(Base):
     posts = relationship('Post', back_populates='user', cascade='all, delete-orphan')
     # Define the one-to-many relationship with Comment
     comments = relationship('Comment', back_populates='user', cascade='all, delete-orphan')
+    # Define the one-to-many relationship with Comment
+    likes = relationship('Like', back_populates='user', cascade='all, delete-orphan')
    
     time_created = Column(DateTime(timezone=True),
                           server_default=func.now(), nullable=False)

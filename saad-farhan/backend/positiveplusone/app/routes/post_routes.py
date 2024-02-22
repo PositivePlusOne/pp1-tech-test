@@ -1,11 +1,13 @@
 from fastapi import APIRouter, HTTPException, Depends, status
 from app.schemas.posts_schema import PostSchema, PostCreate, PostList
 from app.schemas.comments_schema import CommentCreate
+from app.schemas.like_schema import LikeCreate
 from app.schemas.user_schema import UserCreate, UserSchema
 from app.crud.post_crud import post_crud
 from app.crud.tags_crud import tag_crud
 from app.crud.comments_crud import comment_crud
 from app.crud.user_crud import user_crud
+from app.crud.like_crud import like_crud
 
 
 from typing import List
@@ -49,6 +51,15 @@ def add_comment_to_a_post(comment: CommentCreate, db: Session = Depends(get_db))
     try:
         comment_db = comment_crud.create(db, create_schema=comment)
         return comment_db
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Internal server error: {e}")
+    
+@post_router.post("/post/like")
+def add_like_to_a_post(like: LikeCreate, db: Session = Depends(get_db)):
+    # Add Like to a post
+    try:
+        like_db = like_crud.create(db, create_schema=like)
+        return like_db
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {e}")
     
