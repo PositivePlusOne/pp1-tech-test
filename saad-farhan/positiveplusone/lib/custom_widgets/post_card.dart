@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:positiveplusone/custom_widgets/caption_styler.dart';
 
 Widget getPostCard(

@@ -3,6 +3,8 @@ import '../utilities/app_color.dart';
 
 PreferredSizeWidget getAppBar(Color appBarColor) {
   return AppBar(
+    toolbarHeight: 60, 
+    titleSpacing: 25,
     title: Image.asset(
       'assets/logo.png',
       fit: BoxFit.cover,
@@ -32,9 +34,10 @@ PreferredSizeWidget getAppBar(Color appBarColor) {
         ],
       ),
       const SizedBox(
-        width: 5,
+        width: 10,
       ),
       Container(
+        margin: const EdgeInsets.only(right: 25),
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           border: Border.all(color: appBarIconBorderGray, width: 2.0),

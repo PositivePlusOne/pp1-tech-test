@@ -47,7 +47,7 @@ Widget buildStyledText(String text) {
         )),
       );
     }
-    addTextSpan(' ', TextStyle(fontSize: 16, fontWeight: FontWeight.normal));
+    addTextSpan(' ', const TextStyle(fontSize: 16, fontWeight: FontWeight.normal));
   }
 
   return RichText(
