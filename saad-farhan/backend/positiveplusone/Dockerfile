@@ -15,5 +15,5 @@ COPY ./app /app
 
 EXPOSE 6061
 
-CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "6061"]
-# CMD ["pytest"]
+# CMD ["uvicorn", "app.main:app", "--reload", "--host", "0.0.0.0", "--port", "6061"]
+CMD ["pytest"]

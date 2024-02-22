@@ -3,7 +3,7 @@ import 'package:dio/dio.dart';
 class ApiService {
   final Dio _dio = Dio();
 
-  final String baseUrl = "https://635e-58-65-198-117.ngrok-free.app";
+  final String baseUrl = "https://87bf-2400-adc1-157-6b00-d546-7588-135c-c3fc.ngrok-free.app";
 
   Future<Response> fetchData(String endpoint, {Map<String, dynamic>? params}) async {
     try {

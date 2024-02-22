@@ -140,12 +140,16 @@ class _MyHomePageState extends State<MyHomePage>
                     _selectedTab = p0;
                   });
                 }),
+                _isLoading
+                    ? Center(
+                        child: CircularProgressIndicator(color: appPink),
+                      )
+                    : Container(),
                 Expanded(
                   child: ListView.builder(
                     controller: _scrollController,
                     physics: const ScrollPhysics(),
                     itemCount: postData.length,
-                    
                     itemBuilder: (context, index) {
                       if (postData.isEmpty) {
                         return Container();
@@ -168,11 +172,6 @@ class _MyHomePageState extends State<MyHomePage>
                   ),
                 ),
                 const Padding(padding: EdgeInsets.only(bottom: 65)),
-                _isLoading
-                    ? Center(
-                        child: CircularProgressIndicator(color: appPink),
-                      )
-                    : Container()
               ],
             ),
             Align(
