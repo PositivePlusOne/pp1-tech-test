@@ -25,10 +25,10 @@ Widget getRecommendedSection(bool recommendedSectionVisibility, int currentPos,
                               fontWeight: FontWeight.w400),
                         )),
                     const Spacer(),
-                    Icon(
-                      Icons.close_outlined,
+                    ImageIcon(
+                      const AssetImage('assets/cross.png'),
                       color: appGrayWithFourOpacity,
-                    ),
+                    )
                   ],
                 ),
               ),

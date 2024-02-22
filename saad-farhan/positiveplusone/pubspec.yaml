@@ -70,6 +70,8 @@ flutter:
     - assets/logo.png
     - assets/notification.png
     - assets/account_button.png
+    - assets/cross.png
+
 
 
   #   - images/a_dot_ham.jpeg
