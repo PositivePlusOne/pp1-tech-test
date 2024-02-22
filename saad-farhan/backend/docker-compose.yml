@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  customer:
+  posts:
     container_name: positiveplusone
     build: 
       context: ./positiveplusone

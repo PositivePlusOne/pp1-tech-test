@@ -167,6 +167,7 @@ class _MyHomePageState extends State<MyHomePage>
                     },
                   ),
                 ),
+                const Padding(padding: EdgeInsets.only(bottom: 65)),
                 _isLoading
                     ? Center(
                         child: CircularProgressIndicator(color: appPink),
@@ -174,10 +175,8 @@ class _MyHomePageState extends State<MyHomePage>
                     : Container()
               ],
             ),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
+            Align(
+              alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 child: ClipRRect(

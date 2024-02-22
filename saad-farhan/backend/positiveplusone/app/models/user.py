@@ -10,9 +10,10 @@ class User(Base):
     last_name = Column(String, nullable=False)
     user_name = Column(String, unique=True, nullable=False)
     email = Column(String, unique=True, nullable=False)
-    photo_url = Column(String, unique=True)
+    photo_url = Column(String)
     # Define the one-to-many relationship with Post
     posts = relationship('Post', back_populates='user', cascade='all, delete-orphan')
+    # Define the one-to-many relationship with Comment
     comments = relationship('Comment', back_populates='user', cascade='all, delete-orphan')
    
     time_created = Column(DateTime(timezone=True),

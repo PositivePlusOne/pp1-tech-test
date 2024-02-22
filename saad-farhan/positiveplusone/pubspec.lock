@@ -66,7 +66,7 @@ packages:
     source: hosted
     version: "1.0.6"
   dio:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: dio
       sha256: "49af28382aefc53562459104f64d16b9dfd1e8ef68c862d5af436cc8356ce5a8"
@@ -111,7 +111,7 @@ packages:
     source: hosted
     version: "2.0.3"
   flutter_markdown:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_markdown
       sha256: "5b24061317f850af858ef7151dadbb6eb77c1c449c954c7bb064e8a5e0e7d81f"
@@ -124,7 +124,7 @@ packages:
     source: sdk
     version: "0.0.0"
   google_fonts:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: google_fonts
       sha256: f0b8d115a13ecf827013ec9fc883390ccc0e87a96ed5347a3114cac177ef18e8
