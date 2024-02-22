@@ -16,6 +16,11 @@ class Post extends StatelessWidget {
     this.likes = 42,
     this.comments = 42,
     required this.tags,
+    required this.dropDown,
+    required this.likeIcon,
+    required this.onTap,
+    required this.onClick,
+    required this.onShareTap,
   });
 
   final Size size;
@@ -27,6 +32,11 @@ class Post extends StatelessWidget {
   final int comments;
   final List<String> tags;
   final String description;
+  final Widget? dropDown;
+  final Widget? likeIcon;
+  final Function(String)? onTap;
+  final Function()? onClick;
+  final Function()? onShareTap;
 
   @override
   Widget build(BuildContext context) {
@@ -64,10 +74,7 @@ class Post extends StatelessWidget {
                   color: const Color(0xffA4A49D),
                   fontSize: size.height * 0.0145),
             ),
-            trailing: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.more_horiz),
-            ),
+            trailing: dropDown,
           ),
           postImageUrl.isEmpty
               ? Container()
@@ -142,9 +149,7 @@ class Post extends StatelessWidget {
               content: tags,
               wrapSpacing: -8,
               wrapRunSpacing: -8,
-              onTagPress: (tag) {
-                // print('pressed $tag');
-              },
+              onTagPress: onTap,
               tagContainerPadding: const EdgeInsets.all(6),
               tagTextStyle: TextStyle(
                   fontFamily: 'AlbertSans',
@@ -162,10 +167,11 @@ class Post extends StatelessWidget {
             ),
             child: Row(
               children: [
-                SvgPicture.asset(
-                  'assets/svg/heart.svg',
-                  height: size.height * 0.03,
-                ),
+                likeIcon!,
+                // SvgPicture.asset(
+                //   'assets/svg/heart.svg',
+                //   height: size.height * 0.03,
+                // ),
                 SizedBox(
                   width: size.width * 0.01,
                 ),
@@ -181,9 +187,12 @@ class Post extends StatelessWidget {
                 SizedBox(
                   width: size.width * 0.06,
                 ),
-                SvgPicture.asset(
-                  'assets/svg/chat_bubble.svg',
-                  height: size.height * 0.03,
+                GestureDetector(
+                  onTap: onClick,
+                  child: SvgPicture.asset(
+                    'assets/svg/chat_bubble.svg',
+                    height: size.height * 0.03,
+                  ),
                 ),
                 SizedBox(
                   width: size.width * 0.01,
@@ -201,9 +210,12 @@ class Post extends StatelessWidget {
                 //   width: 20,
                 // ),
                 const Spacer(),
-                SvgPicture.asset(
-                  'assets/svg/Vector.svg',
-                  height: size.height * 0.028,
+                GestureDetector(
+                  onTap: onShareTap,
+                  child: SvgPicture.asset(
+                    'assets/svg/Vector.svg',
+                    height: size.height * 0.028,
+                  ),
                 ),
               ],
             ),

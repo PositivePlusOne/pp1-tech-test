@@ -12,9 +12,7 @@ class ApiService {
 
     if (response.statusCode < 400) {
       final Iterable items = jsonDecode(response.body);
-      var list = items.map((e) => Post.fromJson(e)).toList();
-      list.removeAt(0);
-      return list;
+      return items.map((e) => Post.fromJson(e)).toList();
     }
 
     throw Exception('Response Code: ${response.statusCode} - ${response.body}');

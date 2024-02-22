@@ -9,6 +9,8 @@ import 'dart:ui' as _i6;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
+import 'package:positiveplus/models/post_model.dart' as _i8;
+import 'package:positiveplus/models/tag_model.dart' as _i9;
 import 'package:positiveplus/services/api_service.dart' as _i7;
 import 'package:stacked_services/stacked_services.dart' as _i2;
 
@@ -675,4 +677,25 @@ class MockDialogService extends _i1.Mock implements _i2.DialogService {
 /// A class which mocks [ApiService].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockApiService extends _i1.Mock implements _i7.ApiService {}
+class MockApiService extends _i1.Mock implements _i7.ApiService {
+  @override
+  _i5.Future<List<_i8.Post>> getPosts() => (super.noSuchMethod(
+        Invocation.method(
+          #getPosts,
+          [],
+        ),
+        returnValue: _i5.Future<List<_i8.Post>>.value(<_i8.Post>[]),
+        returnValueForMissingStub:
+            _i5.Future<List<_i8.Post>>.value(<_i8.Post>[]),
+      ) as _i5.Future<List<_i8.Post>>);
+
+  @override
+  _i5.Future<List<_i9.Tag>> getTags() => (super.noSuchMethod(
+        Invocation.method(
+          #getTags,
+          [],
+        ),
+        returnValue: _i5.Future<List<_i9.Tag>>.value(<_i9.Tag>[]),
+        returnValueForMissingStub: _i5.Future<List<_i9.Tag>>.value(<_i9.Tag>[]),
+      ) as _i5.Future<List<_i9.Tag>>);
+}

@@ -6,6 +6,9 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:positiveplus/ui/views/navbar/navbar_view.dart';
 import 'package:positiveplus/services/api_service.dart';
+import 'package:positiveplus/ui/views/searchpage/searchpage_view.dart';
+import 'package:positiveplus/ui/views/chatpage/chatpage_view.dart';
+import 'package:positiveplus/ui/views/guidance/guidance_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -13,6 +16,9 @@ import 'package:positiveplus/services/api_service.dart';
     MaterialRoute(page: HomeView),
     MaterialRoute(page: StartupView),
     MaterialRoute(page: NavbarView),
+    MaterialRoute(page: SearchpageView),
+    MaterialRoute(page: ChatpageView),
+    MaterialRoute(page: GuidanceView),
 // @stacked-route
   ],
   dependencies: [

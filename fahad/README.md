@@ -7,7 +7,7 @@ This project is for test purpose only. The app is built using Flutter which disp
 1. Clone the Repository:
 Clone the API repository from GitHub
 2. Navigate to the API Directory:
-Open the terminal and change directory to the API folder: cd p1plus_API
+Open the terminal and change directory to the API folder
 3. Run the API Server:
 Ensure you have Python and Django installed.
 Open the project in VS Code or your preferred code editor.
@@ -21,8 +21,16 @@ python manage.py runserver
 1. Clone the Repository:
 Clone the Flutter app repository from GitHub
 2. Navigate to the Flutter App Directory:
-Open the terminal and change directory to the Flutter app folder: cd positiveplus_app
+Open the terminal and change directory to the Flutter app folder: cd positiveplus_flutterapp
 3. Get Dependencies:
+Ensure you have Flutter SDK installed (version 3.16.9).
+4. Add .env file and add these two variables along with the base URL of API server:
+
+GET_POSTS=$BASE_URL/posts/?format=json
+GET_TAGS=$BASE_URL/hashtags/?format=json
+
+APIs are hosted here: https://p1plus.gitwork.tech/
+
 Ensure you have Flutter SDK installed (version 3.16.9).
 Run the following command to get dependencies:
 

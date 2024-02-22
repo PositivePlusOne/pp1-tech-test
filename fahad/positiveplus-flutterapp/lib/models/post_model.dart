@@ -1,16 +1,23 @@
 import 'dart:convert';
 
+import 'package:positiveplus/models/author_model.dart';
+import 'package:positiveplus/models/category_model.dart';
+import 'package:positiveplus/models/comment_model.dart';
+import 'package:positiveplus/models/like_model.dart';
+import 'package:positiveplus/models/tag_model.dart';
+
 class Post {
   int? id;
   String? title;
   String? body;
+  Author? author;
   String? featuredImage;
   DateTime? createdOn;
   DateTime? lastModified;
-  List<dynamic>? categories;
-  List<dynamic>? comments;
-  List<dynamic>? likes;
-  List<dynamic>? hashtags;
+  List<Category>? categories;
+  List<Comment>? comments;
+  List<Like>? likes;
+  List<Tag>? hashtags;
   int? totalLikes;
   int? totalComments;
 
@@ -18,6 +25,7 @@ class Post {
     this.id,
     this.title,
     this.body,
+    this.author,
     this.featuredImage,
     this.createdOn,
     this.lastModified,
@@ -37,6 +45,7 @@ class Post {
         id: json["id"],
         title: json["title"],
         body: json["body"],
+        author: json["author"] == null ? null : Author.fromJson(json["author"]),
         featuredImage: json["featured_image"],
         createdOn: json["created_on"] == null
             ? null
@@ -46,16 +55,18 @@ class Post {
             : DateTime.parse(json["last_modified"]),
         categories: json["categories"] == null
             ? []
-            : List<dynamic>.from(json["categories"]!.map((x) => x)),
+            : List<Category>.from(
+                json["categories"]!.map((x) => Category.fromJson(x))),
         comments: json["comments"] == null
             ? []
-            : List<dynamic>.from(json["comments"]!.map((x) => x)),
+            : List<Comment>.from(
+                json["comments"]!.map((x) => Comment.fromJson(x))),
         likes: json["likes"] == null
             ? []
-            : List<dynamic>.from(json["likes"]!.map((x) => x)),
+            : List<Like>.from(json["likes"]!.map((x) => Like.fromJson(x))),
         hashtags: json["hashtags"] == null
             ? []
-            : List<dynamic>.from(json["hashtags"]!.map((x) => x)),
+            : List<Tag>.from(json["hashtags"]!.map((x) => Tag.fromJson(x))),
         totalLikes: json["total_likes"],
         totalComments: json["total_comments"],
       );
@@ -64,17 +75,22 @@ class Post {
         "id": id,
         "title": title,
         "body": body,
+        "author": author?.toJson(),
         "featured_image": featuredImage,
         "created_on": createdOn?.toIso8601String(),
         "last_modified": lastModified?.toIso8601String(),
         "categories": categories == null
             ? []
-            : List<dynamic>.from(categories!.map((x) => x)),
-        "comments":
-            comments == null ? [] : List<dynamic>.from(comments!.map((x) => x)),
-        "likes": likes == null ? [] : List<dynamic>.from(likes!.map((x) => x)),
-        "hashtags":
-            hashtags == null ? [] : List<dynamic>.from(hashtags!.map((x) => x)),
+            : List<dynamic>.from(categories!.map((x) => x.toJson())),
+        "comments": comments == null
+            ? []
+            : List<dynamic>.from(comments!.map((x) => x.toJson())),
+        "likes": likes == null
+            ? []
+            : List<dynamic>.from(likes!.map((x) => x.toJson())),
+        "hashtags": hashtags == null
+            ? []
+            : List<dynamic>.from(hashtags!.map((x) => x.toJson())),
         "total_likes": totalLikes,
         "total_comments": totalComments,
       };
