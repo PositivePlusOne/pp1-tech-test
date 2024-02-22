@@ -145,8 +145,10 @@ class _MyHomePageState extends State<MyHomePage>
                         child: CircularProgressIndicator(color: appPink),
                       )
                     : Container(),
-                Expanded(
+                Flexible(
+                  
                   child: ListView.builder(
+                    padding: const EdgeInsets.only(bottom: 100),
                     controller: _scrollController,
                     physics: const ScrollPhysics(),
                     itemCount: postData.length,
@@ -171,7 +173,6 @@ class _MyHomePageState extends State<MyHomePage>
                     },
                   ),
                 ),
-                const Padding(padding: EdgeInsets.only(bottom: 65)),
               ],
             ),
             Align(
