@@ -4,6 +4,7 @@ from datetime import datetime
 class CommentCreate(BaseModel):
     content: str
     post_id: int
+    user_id: int
     
 class CommentUpdate(BaseModel):
     id: int

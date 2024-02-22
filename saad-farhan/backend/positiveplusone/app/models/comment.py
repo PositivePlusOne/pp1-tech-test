@@ -10,6 +10,8 @@ class Comment(Base):
     # Define the many-to-one relationship with Post
     post_id = Column(Integer, ForeignKey('posts.id'))
     post = relationship('Post', back_populates='comments')
+    user_id = Column(Integer, ForeignKey('users.id'))
+    user = relationship('User', back_populates='comments')
     time_created = Column(DateTime(timezone=True),
                           server_default=func.now(), nullable=False)
     time_updated = Column(DateTime(

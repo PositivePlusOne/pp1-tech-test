@@ -25,7 +25,6 @@ def create_post(post: PostCreate, db: Session = Depends(get_db)):
 @post_router.get("/posts/{offset}/{limit}")
 def get_posts(offset:int, limit: int, db: Session = Depends(get_db)):
     try:
-        
         return PostList(posts=post_crud.get_multi(db, offset=offset, limit=limit), count=post_crud.get_count(db))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Internal server error: {e}")

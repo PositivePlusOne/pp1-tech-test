@@ -7,6 +7,7 @@ class UserCreate(BaseModel):
     last_name: str
     user_name: str
     email: str
+    photo_url: Union[str, None]
 
 class UserUpdate(UserCreate):
     id: int

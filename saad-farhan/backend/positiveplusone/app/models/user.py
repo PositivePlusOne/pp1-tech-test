@@ -10,8 +10,11 @@ class User(Base):
     last_name = Column(String, nullable=False)
     user_name = Column(String, unique=True, nullable=False)
     email = Column(String, unique=True, nullable=False)
+    photo_url = Column(String, unique=True)
     # Define the one-to-many relationship with Post
     posts = relationship('Post', back_populates='user', cascade='all, delete-orphan')
+    comments = relationship('Comment', back_populates='user', cascade='all, delete-orphan')
+   
     time_created = Column(DateTime(timezone=True),
                           server_default=func.now(), nullable=False)
     time_updated = Column(DateTime(
