@@ -26,3 +26,4 @@ SQLALCHEMY_DATABASE_TEST_URI=postgresql://postgres:postgres@ppdb:5432/ppdb_test
 
 # Addtional Note
 1. Some fonts weren't open source like BN Super-Sized so I used some other font for that
+2. Same with a few icons
